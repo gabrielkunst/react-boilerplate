@@ -1,7 +1,7 @@
 export function App() {
     return (
-        <div>
-            <h1>App</h1>
-        </div>
+        <main>
+            <h1>React Boilerplate</h1>
+        </main>
     )
 }
