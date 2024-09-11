@@ -2,16 +2,13 @@
     "compilerOptions": {
         "types": ["babel__generator", "node"],
         "target": "ES2022",
-        "lib": ["ES2023"],
-        "module": "ESNext",
+        "lib": ["ES2022"], // Downgraded from ES2023
+        "module": "Node16",
         "skipLibCheck": true,
-        /* Bundler mode */
-        "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
+        "moduleResolution": "node16",
         "isolatedModules": true,
         "moduleDetection": "force",
         "noEmit": true,
-        /* Linting */
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
