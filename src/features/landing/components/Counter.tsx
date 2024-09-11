@@ -1,57 +1,37 @@
-import reactLogo from '../assets/react.svg'
-import viteLogo from '../assets/vite.svg'
 import { useState } from 'react'
 
 export function Counter() {
     const [count, setCount] = useState(0)
 
+    const handleIncrement = () => setCount((prevState) => prevState + 1)
+
+    const handleDecrement = () =>
+        setCount((prevState) => {
+            if (prevState === 0) {
+                return 0
+            }
+
+            return prevState - 1
+        })
+
     return (
-        <>
-            <div>
-                <div className="flex space-x-4">
-                    <a
-                        href="https://vitejs.dev"
-                        target="_blank"
-                        className="font-medium text-[#646cff] hover:text-[#535bf2] no-underline"
-                    >
-                        <img
-                            src={viteLogo}
-                            className="w-16 h-16"
-                            alt="Vite logo"
-                        />
-                    </a>
-                    <a
-                        href="https://react.dev"
-                        target="_blank"
-                        className="font-medium text-[#646cff] hover:text-[#535bf2] no-underline"
-                    >
-                        <img
-                            src={reactLogo}
-                            className="w-16 h-16"
-                            alt="React logo"
-                        />
-                    </a>
-                </div>
-            </div>
-            <h1 className="text-6xl leading-tight text-center">Vite + React</h1>
-            <div className="flex flex-col items-center mt-2">
+        <div className="space-y-4 text-center">
+            <h1 className="text-2xl">Counter</h1>
+            <p className="text-xl font-bold">{count}</p>
+            <div className="space-x-6">
                 <button
-                    onClick={() => setCount((count) => count + 1)}
-                    className="rounded-lg border border-transparent px-4 py-2 text-lg font-medium bg-[#1a1a1a] text-white cursor-pointer transition duration-200 hover:border-[#646cff] focus:outline-none focus-visible:outline-[4px] focus-visible:outline-auto focus-visible:outline-webkit-focus-ring-color"
+                    onClick={handleIncrement}
+                    className="px-4 py-2 text-white bg-blue-500 rounded-md"
                 >
-                    count is {count}
+                    Increment
                 </button>
-                <p className="mt-4 text-lg">
-                    Edit{' '}
-                    <code className="font-mono text-[#646cff]">
-                        src/App.tsx
-                    </code>{' '}
-                    and save to test HMR
-                </p>
+                <button
+                    onClick={handleDecrement}
+                    className="px-4 py-2 text-white bg-blue-500 rounded-md"
+                >
+                    Decrement
+                </button>
             </div>
-            <p className="mt-2 text-lg text-center">
-                Click on the Vite and React logos to learn more
-            </p>
-        </>
+        </div>
     )
 }

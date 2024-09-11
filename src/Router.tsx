@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { LandingScreen } from './features/landing/screens'
+import { LandingScreen } from './features/landing/screens/LandingScreen'
 
 const router = createBrowserRouter([
     {
